@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" minHeight="600.0" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareengineering_ui.FXMLAddClassController">
+   <content>
+      <VBox alignment="TOP_CENTER">
+         <children>
+            <Label text="Add Class" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri" size="32.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <GridPane fx:id="addGrid" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
+                  <ColumnConstraints hgrow="NEVER" />
+                  <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="NEVER" />
+                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="NEVER" />
+                  <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="ALWAYS" />
+                  <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Class Name:" GridPane.halignment="RIGHT" GridPane.valignment="TOP" />
+                  <TextField fx:id="addClassName" prefHeight="25.0" promptText="&lt;Enter Class Name&gt;" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <GridPane fx:id="addAttributeNameGrid" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                     <columnConstraints>
+                        <ColumnConstraints fx:id="addAttributeNameCol" hgrow="NEVER" minWidth="10.0" />
+                        <ColumnConstraints fx:id="addAttributeTypeCol" hgrow="NEVER" minWidth="10.0" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="addAttributeName" prefWidth="200.0" promptText="&lt;Attribute Name&gt;" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="addAttributeType" promptText="&lt;Attribute Type&gt;" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="addAttributeAccessSpec" onAction="#addAttributeAccessSpecAction" promptText="&lt;Access Specifier&gt;" GridPane.columnIndex="2" GridPane.valignment="TOP" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </GridPane>
+                  <Button fx:id="addAttributeButton" mnemonicParsing="false" onAction="#addAttributeButtonAction" text="+Add Attrbute" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <GridPane fx:id="addMethodGrid" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="addMethodName" prefWidth="200.0" promptText="&lt;Method Name&gt;" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="addMethodParameter" prefHeight="25.0" promptText="&lt;Method Parameter&gt;" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="addMethodAccessSpec" promptText="&lt;Access Specifier&gt;" GridPane.columnIndex="2" />
+                        <TextField fx:id="addMethodReturnType" promptText="&lt;Return Type&gt;" GridPane.columnIndex="3" />
+                     </children>
+                  </GridPane>
+                  <Button fx:id="addMethodButton" mnemonicParsing="false" onAction="#addMethodButtonAction" text="+Add Method" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Button fx:id="addRelationshipButton" mnemonicParsing="false" onAction="#addRelationshipButtonAction" text="+Add Relationship" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </GridPane.margin></Button>
+                  <GridPane fx:id="addRelationshipGrid" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="6">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+                     </rowConstraints>
+                     <children>
+                        <MenuButton fx:id="addRelationshipMenu" alignment="CENTER" mnemonicParsing="false" onAction="#addRelationshipMenuAction" prefWidth="200.0" text="Select Relationship" GridPane.valignment="TOP">
+                           <items>
+                              <MenuItem fx:id="relationshipInheritance" mnemonicParsing="false" onAction="#relationshipInheritanceAction" text="Inheritance" />
+                              <MenuItem fx:id="relationshipAggregation" mnemonicParsing="false" onAction="#relationshipAggregationAction" text="Aggregation" />
+                              <MenuItem fx:id="relationshipComposition" mnemonicParsing="false" onAction="#relationshipCompositionAction" text="Composition" />
+                           </items>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </MenuButton>
+                        <TextField fx:id="addRelationshipClass" promptText="&lt;Enter Class&gt;" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <MenuButton fx:id="addRelationshipMult" mnemonicParsing="false" onAction="#addRelationshipMultAction" text="Multiplicity" GridPane.columnIndex="2">
+                          <items>
+                            <MenuItem fx:id="relationship11" mnemonicParsing="false" onAction="#relationship11Action" text="1 .. 1" />
+                            <MenuItem fx:id="relationship1Many" mnemonicParsing="false" onAction="#relationship1ManyAction" text="1 .. *" />
+                              <MenuItem fx:id="relationshipManyMany" mnemonicParsing="false" onAction="#relationshipManyManyAction" text="* .. *" />
+                          </items>
+                        </MenuButton>
+                     </children>
+                  </GridPane>
+                  <Button fx:id="addAttributeRemoveButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addAttributeRemoveButtonAction" text="-Remove Attribute" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="addMethodRemoveButton" mnemonicParsing="false" onAction="#addMethodRemoveButtonAction" text="-Remove Method" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Button fx:id="addRelationshipRemoveButton" mnemonicParsing="false" onAction="#addRelationshipRemoveButtonAction" text="-Remove Relationship" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="addConfirm" mnemonicParsing="false" onAction="#addConfirmAction" text="Confirm New Class" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                  <Button fx:id="addCancel" mnemonicParsing="false" onAction="#addCancelAction" text="Cancel" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                  <Label text="Attribute:" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                  <Label text="Method:" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                  <Label text="Relationship" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+                  <Label text="Abstract:" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="addAbstractYes" mnemonicParsing="false" onAction="#addAbstractYesAction" text="Yes" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="addAbstractNo" mnemonicParsing="false" onAction="#addAbstractNoAction" text="No" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </VBox>
+   </content>
+   <padding>
+      <Insets left="50.0" right="50.0" />
+   </padding>
+</ScrollPane>

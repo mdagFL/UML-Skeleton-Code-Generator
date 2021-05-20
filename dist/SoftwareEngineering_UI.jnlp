@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="SoftwareEngineering_UI.jnlp">
+  <information>
+    <title>SoftwareEngineering_UI</title>
+    <vendor>cvasi</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="SoftwareEngineering_UI.jar" size="26445" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="softwareengineering_ui.SoftwareEngineering_UI"  name="SoftwareEngineering_UI" />
+  <update check="always"/>
+</jnlp>
